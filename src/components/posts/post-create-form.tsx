@@ -12,12 +12,15 @@ import {
 
 import * as actions from '@/actions';
 import FormButton from '@/components/common/form-button';
+import { useTranslations } from 'next-intl';
 
 interface PostCreateFormProps {
   slug: string;
 }
 
 export default function PostCreateForm({ slug }: PostCreateFormProps) {
+  const t = useTranslations('PostCreateForm');
+
   const [formState, action] = useFormState(
     actions.createPost.bind(null, slug),
     { errors: {} }
@@ -26,26 +29,26 @@ export default function PostCreateForm({ slug }: PostCreateFormProps) {
     <Popover placement="left">
       <PopoverTrigger>
         <Button color="primary" className="w-full">
-          Create a Post
+          {t('createAPost')}
         </Button>
       </PopoverTrigger>
       <PopoverContent>
         <form action={action}>
           <div className="flex flex-col gap-4 p-4 w-80">
-            <h3 className="text-lg">Create a Post</h3>
+            <h3 className="text-lg"> {t('createAPost')}</h3>
             <Input
-              label="Title"
+              label={t('title')}
               name="title"
               labelPlacement="outside"
-              placeholder="Title"
+              placeholder={t('title')}
               isInvalid={!!formState.errors.title}
               errorMessage={formState.errors.title?.join(', ')}
             />
             <Textarea
-              label="Content"
+              label={t('content')}
               name="content"
               labelPlacement="outside"
-              placeholder="Content"
+              placeholder={t('content')}
               isInvalid={!!formState.errors.content}
               errorMessage={formState.errors.content?.join(', ')}
             />
@@ -55,7 +58,7 @@ export default function PostCreateForm({ slug }: PostCreateFormProps) {
               </div>
             )}
             <FormButton variant="bordered" color="primary">
-              Create
+              {t('create')}
             </FormButton>
           </div>
         </form>

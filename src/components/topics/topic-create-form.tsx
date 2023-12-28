@@ -12,33 +12,35 @@ import {
 import * as actions from '@/actions';
 import { useFormState } from 'react-dom';
 import FormButton from '../common/form-button';
+import { useTranslations } from 'next-intl';
 
 export default function TopicCreateForm() {
+  const t = useTranslations('TopicCreateForm');
   const [formState, action] = useFormState(actions.createTopic, { errors: {} });
   return (
     <Popover placement="left">
       <PopoverTrigger>
         <Button color="primary" className="w-full">
-          Create a Topic
+          {t('createATopic')}
         </Button>
       </PopoverTrigger>
       <PopoverContent>
         <form action={action}>
           <div className="flex flex-col gap-4 p-4 w-80">
-            <h3 className="text-lg">Create a Topic</h3>
+            <h3 className="text-lg">{t('createATopic')}</h3>
             <Input
-              label="Name"
+              label={t('name')}
               name="name"
               labelPlacement="outside"
-              placeholder="Name"
+              placeholder={t('name')}
               isInvalid={!!formState.errors.name}
               errorMessage={formState.errors.name?.join(', ')}
             />
             <Textarea
-              label="Description"
+              label={t('description')}
               name="description"
               labelPlacement="outside"
-              placeholder="Describe your topic"
+              placeholder={t('descriptionPlaceholder')}
               isInvalid={!!formState.errors.description}
               errorMessage={formState.errors.description?.join(', ')}
             />
@@ -48,7 +50,7 @@ export default function TopicCreateForm() {
               </div>
             )}
             <FormButton variant="bordered" color="primary">
-              Create
+              {t('create')}
             </FormButton>
           </div>
         </form>

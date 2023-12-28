@@ -7,6 +7,7 @@ import { Metadata, ResolvingMetadata } from 'next';
 interface TopicShowProps {
   params: {
     slug: string;
+    locale: string;
   };
 }
 

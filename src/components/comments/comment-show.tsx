@@ -1,16 +1,16 @@
 import Image from 'next/image';
-import { Button } from '@nextui-org/react';
 import CommentCreateForm from '@/components/comments/comment-create-form';
 import type { CommentWithAuthor } from '@/db/queries/comments';
+import { useFormatter } from 'next-intl';
 
 interface CommentShowProps {
   commentId: string;
   comments: CommentWithAuthor[];
 }
 
-// TODO: Get a list of comments
 export default function CommentShow({ commentId, comments }: CommentShowProps) {
   const comment = comments.find((c) => c.id === commentId);
+  const format = useFormatter();
 
   if (!comment) {
     return null;
@@ -39,8 +39,16 @@ export default function CommentShow({ commentId, comments }: CommentShowProps) {
               {comment.user.name}
             </p>
             <p className="text-xs font-medium text-gray-500">
-              {comment.createdAt.toLocaleTimeString()}&nbsp;
-              {comment.createdAt.toLocaleDateString()}
+              {format.dateTime(comment.createdAt, {
+                hour: 'numeric',
+                minute: 'numeric',
+              })}
+              &nbsp;
+              {format.dateTime(comment.createdAt, {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              })}
             </p>
           </div>
           <p className="text-gray-900">{comment.content}</p>

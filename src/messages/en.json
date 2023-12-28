@@ -1,0 +1,43 @@
+{
+  "Index": {
+    "title": "Top Posts",
+    "topics": "Topics"
+  },
+  "HeaderAuth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out"
+  },
+  "PostList": {
+    "noSlug": "Need a slug to link to a post",
+    "by": "By",
+    "comments": "comments"
+  },
+  "PostCreateForm": {
+    "createAPost": "Create a Post",
+    "title": "Title",
+    "content": "Content",
+    "create": "Create"
+  },
+  "TopicCreateForm": {
+    "createATopic": "Create a Topic",
+    "name": "Name",
+    "description": "Description",
+    "descriptionPlaceholder": "Describe your topic",
+    "create": "Create"
+  },
+  "CommentCreateForm": {
+    "reply": "Reply",
+    "enterYourComment": "Enter your comment",
+    "create": "Create Comment"
+  },
+  "CommentList": {
+    "allComments": "All {length} comments"
+  },
+  "PostPage": {
+    "backTo": "Back to"
+  },
+  "SearchBar": {
+    "search": "Search"
+  }
+}

@@ -4,14 +4,14 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Input,
 } from '@nextui-org/react';
-
-import HeaderAuth from './header-auth';
-import SearchInput from './search-input';
 import { Suspense } from 'react';
 
-export default async function Header() {
+import SearchInput from './search-input';
+import HeaderAuthWrapper from './header-auth';
+import LanguageChanger from './language-switcher';
+
+export default async function Header({ locale }: { locale: string }) {
   return (
     <Navbar className="shadow mb-6 py-2">
       <NavbarBrand>
@@ -27,7 +27,10 @@ export default async function Header() {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
-        <HeaderAuth />
+        <Suspense>
+          <LanguageChanger locale={locale} />
+        </Suspense>
+        <HeaderAuthWrapper />
       </NavbarContent>
     </Navbar>
   );

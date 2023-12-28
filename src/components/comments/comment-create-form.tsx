@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Textarea, Button } from '@nextui-org/react';
 import FormButton from '@/components/common/form-button';
 import * as actions from '@/actions';
+import { useTranslations } from 'next-intl';
 
 interface CommentCreateFormProps {
   postId: string;
@@ -17,6 +18,7 @@ export default function CommentCreateForm({
   parentId,
   startOpen,
 }: CommentCreateFormProps) {
+  const t = useTranslations('CommentCreateForm');
   const [open, setOpen] = useState(startOpen);
   const ref = useRef<HTMLFormElement | null>(null);
   const [formState, action] = useFormState(
@@ -39,7 +41,7 @@ export default function CommentCreateForm({
       <div className="space-y-2 px-1">
         <Textarea
           name="content"
-          placeholder="Enter your comment"
+          placeholder={t('enterYourComment')}
           isInvalid={!!formState.errors.content}
           errorMessage={formState.errors.content?.join(', ')}
         />
@@ -50,7 +52,7 @@ export default function CommentCreateForm({
           </div>
         ) : null}
 
-        <FormButton>Create Comment</FormButton>
+        <FormButton>{t('create')}</FormButton>
       </div>
     </form>
   );
@@ -58,7 +60,7 @@ export default function CommentCreateForm({
   return (
     <div>
       <Button size="sm" variant="light" onClick={() => setOpen(!open)}>
-        Reply
+        {t('reply')}
       </Button>
       {open && form}
     </div>

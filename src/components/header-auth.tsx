@@ -9,11 +9,13 @@ import {
   PopoverContent,
 } from '@nextui-org/react';
 import { useSession } from 'next-auth/react';
+// import { useTranslations } from 'next-intl';
 
 import * as actions from '@/actions';
 
 export default function HeaderAuth() {
   const session = useSession();
+  // const t = useTranslations('HeaderAuth');
   let authContent: React.ReactNode;
   if (session.status === 'loading') {
     authContent = null;

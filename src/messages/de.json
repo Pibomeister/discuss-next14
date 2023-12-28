@@ -1,0 +1,43 @@
+{
+  "Index": {
+    "title": "Top-Beiträge",
+    "topics": "Themen"
+  },
+  "HeaderAuth": {
+    "signIn": "Anmelden",
+    "signUp": "Registrieren",
+    "signOut": "Abmelden"
+  },
+  "PostList": {
+    "noSlug": "Es wird ein Slug benötigt, um auf einen Beitrag zu verlinken",
+    "by": "Von",
+    "comments": "Kommentare"
+  },
+  "PostCreateForm": {
+    "createAPost": "Einen Beitrag erstellen",
+    "title": "Titel",
+    "content": "Inhalt",
+    "create": "Erstellen"
+  },
+  "TopicCreateForm": {
+    "createATopic": "Ein Thema erstellen",
+    "name": "Name",
+    "description": "Beschreibung",
+    "descriptionPlaceholder": "Beschreiben Sie Ihr Thema",
+    "create": "Erstellen"
+  },
+  "CommentCreateForm": {
+    "reply": "Antworten",
+    "enterYourComment": "Geben Sie Ihren Kommentar ein",
+    "create": "Kommentar erstellen"
+  },
+  "CommentList": {
+    "allComments": "Alle {length} Kommentare"
+  },
+  "PostPage": {
+    "backTo": "Zurück zu"
+  },
+  "SearchBar": {
+    "search": "Suche"
+  }
+}

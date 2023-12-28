@@ -1,18 +1,21 @@
-import Link from 'next/link';
 import { Suspense } from 'react';
+import { ResolvingMetadata, Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
+import Link from 'next/link';
+
+import db from '@/db';
+import paths from '@/paths';
+import { fetchCommentsByPostId } from '@/db/queries/comments';
 import PostShow from '@/components/posts/post-show';
 import CommentList from '@/components/comments/comment-list';
 import CommentCreateForm from '@/components/comments/comment-create-form';
 import PostShowLoading from '@/components/posts/post-show-loading';
-import paths from '@/paths';
-import { fetchCommentsByPostId } from '@/db/queries/comments';
-import db from '@/db';
-import { ResolvingMetadata, Metadata } from 'next';
 
 interface PostShowPageProps {
   params: {
     slug: string;
     postId: string;
+    locale: string;
   };
 }
 
@@ -36,11 +39,13 @@ export const generateMetadata = async (
 
 export default async function PostShowPage({ params }: PostShowPageProps) {
   const { slug, postId } = params;
-
+  const t = await getTranslations('PostPage');
   return (
     <div className="space-y-3">
       <Link className="decoration-solid " href={paths.topicShow(slug)}>
-        <div className="border rounded p-2 w-fit">⬅️ Back to {slug}</div>
+        <div className="border rounded p-2 w-fit">
+          ⬅️ {t('backTo')} {slug}
+        </div>
       </Link>
       <Suspense fallback={<PostShowLoading />}>
         <PostShow postId={postId} />

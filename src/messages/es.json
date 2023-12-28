@@ -1,0 +1,43 @@
+{
+  "Index": {
+    "title": "Principales Publicaciones",
+    "topics": "Temas"
+  },
+  "HeaderAuth": {
+    "signIn": "Iniciar Sesión",
+    "signUp": "Registrarse",
+    "signOut": "Cerrar Sesión"
+  },
+  "PostList": {
+    "noSlug": "Se necesita un slug para enlazar a una publicación",
+    "by": "Por",
+    "comments": "comentarios"
+  },
+  "PostCreateForm": {
+    "createAPost": "Crear una Publicación",
+    "title": "Título",
+    "content": "Contenido",
+    "create": "Crear"
+  },
+  "TopicCreateForm": {
+    "createATopic": "Crear un Tema",
+    "name": "Nombre",
+    "description": "Descripción",
+    "descriptionPlaceholder": "Describe tu tema",
+    "create": "Crear"
+  },
+  "CommentCreateForm": {
+    "reply": "Responder",
+    "enterYourComment": "Ingresa tu comentario",
+    "create": "Crear Comentario"
+  },
+  "CommentList": {
+    "allComments": "Todos los {length} comentarios"
+  },
+  "PostPage": {
+    "backTo": "Volver a"
+  },
+  "SearchBar": {
+    "search": "Buscar"
+  }
+}
