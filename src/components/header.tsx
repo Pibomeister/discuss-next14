@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import {
   Navbar,
   NavbarBrand,
@@ -10,6 +9,7 @@ import { Suspense } from 'react';
 import SearchInput from './search-input';
 import HeaderAuthWrapper from './header-auth';
 import LanguageChanger from './language-switcher';
+import { Link } from '@/navigation';
 
 export default async function Header({ locale }: { locale: string }) {
   return (

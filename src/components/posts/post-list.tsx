@@ -1,5 +1,4 @@
-import type { Post, User, Topic } from '@prisma/client';
-import Link from 'next/link';
+import { Link } from '@/navigation';
 import paths from '@/paths';
 import type { PostWithData } from '@/db/queries/posts';
 import { getTranslations } from 'next-intl/server';

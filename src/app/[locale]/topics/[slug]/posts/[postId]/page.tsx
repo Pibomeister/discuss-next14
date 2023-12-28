@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { ResolvingMetadata, Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import Link from 'next/link';
+import { Link } from '@/navigation';
 
 import db from '@/db';
 import paths from '@/paths';
